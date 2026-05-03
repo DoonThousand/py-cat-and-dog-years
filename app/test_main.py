@@ -15,5 +15,20 @@ from app.main import get_human_age
         (100, 100, [21, 17]),
     ]
 )
-def test_calculate_age(cat_age: int, dog_age: int, result: list) -> None:
+def test_calculate_age(cat_age: int, dog_age: int, result: list[int]) -> None:
     assert get_human_age(cat_age, dog_age) == result
+
+
+@pytest.mark.parametrize(
+    "cat_age, dog_age",
+    [
+        ("10", 10),
+        (10, "20"),
+        (None, 10),
+        (10, None),
+        (10.5, 20),
+    ]
+)
+def test_invalid_types(cat_age: object, dog_age: object) -> None:
+    with pytest.raises(TypeError):
+        get_human_age(cat_age, dog_age)
