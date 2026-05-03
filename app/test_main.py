@@ -38,7 +38,9 @@ def test_calculate_age(cat_age: int, dog_age: int, result: list[int]) -> None:
     ],
 )
 def test_large_and_negative(
-    cat_age: int, dog_age: int, result: list[int],
+    cat_age: int,
+    dog_age: int,
+    result: list[int],
 ) -> None:
     assert get_human_age(cat_age, dog_age) == result
 

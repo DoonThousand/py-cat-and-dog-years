@@ -12,5 +12,4 @@ def get_human_age(cat_age: int, dog_age: int) -> list[int]:
 
     cat = convert(cat_age, 15, 9, 4)
     dog = convert(dog_age, 15, 9, 5)
-
     return [cat, dog]
